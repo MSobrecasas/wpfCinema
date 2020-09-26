@@ -1,0 +1,88 @@
+﻿<Window x:Class="Vistas.WinWelcome"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:Control="clr-namespace:Vistas.Control_de_Usuario"
+        Title="WinWelcome" Height="600" Width="900"
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize"
+       >
+
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="349"/>
+            <ColumnDefinition Width="551"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition  />
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Image Source="Resources/Imagenes/icecream.png" Grid.RowSpan="2"></Image>
+             <Image Source="Resources/Imagenes/Llogin.png"></Image>
+            <Border   BorderBrush="#682a22" BorderThickness="3" Grid.RowSpan="2">
+            </Border>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="200"/>
+                <RowDefinition  Height="400"/>
+            </Grid.RowDefinitions>
+            
+           
+            
+        </Grid>
+        <Grid Grid.Column="1" Background="White">
+            
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150" />
+                <RowDefinition Height="300" />
+                <RowDefinition Height="150" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="100" />
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="492"/>
+                        <ColumnDefinition Width="59"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="1" Background="Transparent" BorderThickness="0"
+                            Width="45" Height="45" Click="btn_close">
+                        <Image Source="Resources/Imagenes/close.png" Stretch="Fill"  ></Image>
+                    </Button>
+                    
+                </Grid>
+                <TextBlock Style="{StaticResource txtinicio}" HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" Grid.Row="1" >Login</TextBlock>  
+            </Grid>
+            
+             <Grid Grid.Row="1" HorizontalAlignment="Center" Width="500">
+                    <Control:Login x:Name="login" Height="180" >
+            </Control:Login>
+               
+
+            </Grid>
+
+            <Button Content="Ingresar" Name="btnLogin" VerticalAlignment="Center"  
+                Click="btnLogin_Click" Style="{StaticResource ResourceKey= menu}"  Grid.Row="2" />
+            <Border   BorderBrush="#682a22" BorderThickness="3" Grid.RowSpan="3">
+            </Border>
+        </Grid>
+       
+       
+        
+        
+        
+         </Grid>
+</Window>

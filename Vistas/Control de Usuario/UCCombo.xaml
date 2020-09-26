@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="Vistas.Control_de_Usuario.UCCombo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Vistas.Control_de_Usuario"
+             mc:Ignorable="d" 
+              d:DesignHeight="50" d:DesignWidth="450">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="225"/>
+            <ColumnDefinition Width="225"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <TextBlock  HorizontalAlignment="Left" Style="{StaticResource txtabm}" Name="texto"
+                Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Text="{Binding TextC}"></TextBlock>
+        <ComboBox Grid.Column="1" Style="{StaticResource style_cmbbox}"
+                  ItemsSource="{Binding lista}" SelectedItem="{Binding item}"
+                  DisplayMemberPath="Elija una opcion..">
+
+
+        </ComboBox>
+    </Grid>
+</UserControl>

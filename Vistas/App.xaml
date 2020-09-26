@@ -1,0 +1,19 @@
+﻿<Application x:Class="Vistas.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="WinWelcome.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Dictionaries/StyleMenu.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Resources/Dictionaries/StyleButaca.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Resources/Dictionaries/StyleGenerales.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Resources/Dictionaries/PlantillaButaca.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Resources/Dictionaries/PlantillaTexbox.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Resources/Dictionaries/BtnAddDeleteEdit.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
+      
+    </Application.Resources>
+</Application>

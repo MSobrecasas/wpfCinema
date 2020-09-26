@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Vistas.Control_de_Usuario.BtnGC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Vistas.Control_de_Usuario"
+             mc:Ignorable="d" 
+             d:DesignHeight="60" d:DesignWidth="450">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="225"/>
+            <ColumnDefinition Width="225"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Label Name="txt" Content="{Binding opcion}" Visibility="Hidden"></Label>
+        <Button   Name="btn_Guardar" VerticalAlignment="Center" HorizontalAlignment="Center"
+                  
+                 
+                  
+                  Grid.Row="0" Grid.Column="0" Style="{StaticResource menu}" Content="Guardar" Click="btn_Guardar_Click"></Button>
+        <Button   Name="btn_Cancelar" VerticalAlignment="Center" HorizontalAlignment="Center"
+                  
+                  Grid.Row="0" Grid.Column="1" Style="{StaticResource menu}" Content="Cancelar" Click="btn_Cancelar_Click"></Button>
+    </Grid>
+</UserControl>
+<!--
+            <Command="{Binding Path=AddClick, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}
+            
+            Command="{Binding Path=CancelClick, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}}
+            -->

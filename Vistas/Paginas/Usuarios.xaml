@@ -1,0 +1,65 @@
+﻿<Page x:Class="Vistas.Paginas.Usuarios"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Vistas.Paginas"
+       xmlns:Control="clr-namespace:Vistas.Control_de_Usuario"
+      mc:Ignorable="d" 
+      d:DesignHeight="530" d:DesignWidth="760"
+      Title="Usuarios">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="300*" />
+            <RowDefinition Height="130*" />
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" Style="{StaticResource txtabm}"
+                Grid.Row="0"  VerticalAlignment="Center" >Usuarios</TextBlock>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="180,0" Width="500" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Control:UCDatos x:Name="txtusername" TextC="Nombre de Usuario"></Control:UCDatos>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="225"/>
+                    <ColumnDefinition Width="225"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <TextBlock  HorizontalAlignment="Left" Style="{StaticResource txtabm}" Name="Contraseña"
+                Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
+                <PasswordBox  Name="txtPass" VerticalAlignment="Center"  Style="{StaticResource ResourceKey=style_passbox}"
+                  Grid.Row="0" Grid.Column="1">
+                </PasswordBox>
+            </Grid>
+            <Control:UCDatos x:Name="txtAyP" Grid.Row="2" TextC="Apellido y Nombre"></Control:UCDatos>
+
+        </Grid>
+        <Grid Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="225"/>
+                <ColumnDefinition Width="225"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Button   Name="btn_Guardar" VerticalAlignment="Center" HorizontalAlignment="Center"
+                      Grid.Row="0" Grid.Column="0" Style="{StaticResource menu}" Content="Guardar" Click="Guardar_Click"></Button>
+            <Button   Name="btn_Cancelar" VerticalAlignment="Center" HorizontalAlignment="Center"
+                      Grid.Row="0" Grid.Column="1" Style="{StaticResource menu}" Content="Cancelar" Click="Cancelar_Click"></Button>
+
+        </Grid>
+    </Grid>
+</Page>

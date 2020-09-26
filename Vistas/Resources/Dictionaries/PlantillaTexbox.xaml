@@ -1,0 +1,73 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Vistas.Resources.Dictionaries">
+
+    
+    <ControlTemplate  x:Key="plan_texbox" TargetType="{x:Type TextBox}">
+     
+        <Border x:Name="border"
+                CornerRadius="20,20,20,20"
+                BorderBrush="#682a22"
+                BorderThickness="2"
+                Background="#fff"
+                >
+            <ScrollViewer x:Name="PART_ContentHost"
+                          Focusable="false"
+                          HorizontalScrollBarVisibility="Hidden"
+                          VerticalScrollBarVisibility="Hidden"/>
+        </Border>
+    </ControlTemplate>
+    
+    <Style TargetType="{x:Type TextBox}"  x:Key="style_texbox">
+        <Setter Property="Template" Value="{StaticResource ResourceKey=plan_texbox}"> </Setter>
+        <Setter Property="Height" Value="40"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+
+    </Style>
+
+    <ControlTemplate  x:Key="plan_passbox" TargetType="{x:Type PasswordBox}">
+
+        <Border x:Name="border"
+                CornerRadius="20,20,20,20"
+                BorderBrush="#682a22"
+                BorderThickness="2"
+                Background="#fff"
+                >
+            <ScrollViewer x:Name="PART_ContentHost"
+                          Focusable="false"
+                          HorizontalScrollBarVisibility="Hidden"
+                          VerticalScrollBarVisibility="Hidden"/>
+        </Border>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type PasswordBox}"  x:Key="style_passbox">
+        <Setter Property="Template" Value="{StaticResource ResourceKey=plan_passbox}"></Setter>
+        <Setter Property="Height" Value="40"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+
+    </Style>
+
+
+    <ControlTemplate  x:Key="plan_cmbbox" TargetType="{x:Type ComboBox}">
+
+        <Border x:Name="border"
+                CornerRadius="20,20,20,20"
+                BorderBrush="#682a22"
+                BorderThickness="2"
+                Background="White"
+                >
+            
+        </Border>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type ComboBox}"  x:Key="style_cmbbox">
+        
+        <Setter Property="Height" Value="40"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Template" Value="{StaticResource ResourceKey=plan_cmbbox}"></Setter>
+    </Style>
+
+</ResourceDictionary>

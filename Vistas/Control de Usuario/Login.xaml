@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Vistas.Control_de_Usuario.Login"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Vistas.Control_de_Usuario"
+             mc:Ignorable="d" 
+             d:DesignHeight="180" d:DesignWidth="450">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="280" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition  />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource txtinicio}"  Grid.Row="0" Grid.Column="0" >Usuario</TextBlock>
+        <TextBlock Style="{StaticResource txtinicio}" Grid.Row="1" Grid.Column="0" >Contraseña</TextBlock>
+        <Border x:Name="txtuser" BorderBrush="#682a22" BorderThickness="3" 
+                CornerRadius="18" Grid.Row="0" Grid.Column="1"
+                Width="250" Height="40" Background="#fb9da9">
+            <StackPanel  VerticalAlignment="Center"
+                    HorizontalAlignment="Center" Orientation="Horizontal">
+                <Image Source="/Vistas;component/Resources/Imagenes/user.png" Width="35"
+                       Height="35" HorizontalAlignment="Left"></Image>
+                <TextBox  Name="txtUsername" Width="190" BorderBrush="Transparent"
+                          BorderThickness="0" FontSize="20" Background="Transparent"></TextBox>
+
+            </StackPanel>
+        </Border>
+        <Border x:Name="txtpass" BorderBrush="#682a22" BorderThickness="3" 
+                CornerRadius="18" Grid.Row="1" Grid.Column="1"
+                Width="250" Height="40" Background="#fb9da9">
+            <StackPanel  VerticalAlignment="Center"
+                    HorizontalAlignment="Center" Orientation="Horizontal">
+                <Image Source="/Vistas;component/Resources/Imagenes/pass.png" Width="35"
+                       Height="30" HorizontalAlignment="Left"></Image>
+
+                <PasswordBox Name="txtPassword"   Width="190" Grid.Row="1" Grid.Column="2" Margin="0,10"
+                             BorderBrush="Transparent" SelectionBrush="Transparent" FontSize="20"
+                             Height="30" Background="Transparent"
+                             VerticalAlignment="Center" BorderThickness="0"/>
+            </StackPanel>
+        </Border>
+       
+
+    </Grid>
+</UserControl>

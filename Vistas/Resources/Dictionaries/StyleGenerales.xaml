@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Vistas.Resources.Dictionaries">
+
+    <Style TargetType="{x:Type Label}"  x:Key="textos">
+        <Setter Property="FontSize" Value="25"></Setter>
+        <Setter Property="Margin" Value="0,0,0,0"></Setter>
+    </Style>
+    <Style TargetType="{x:Type TextBox}"  x:Key="texbox">
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Margin" Value="0,0,0,0"></Setter>
+    </Style>
+    <Style TargetType="{x:Type TextBlock}"  x:Key="txtabm">
+        <Setter Property="FontSize" Value="28"></Setter>
+        <Setter Property="Foreground" Value="WhiteSmoke"></Setter>
+        <Setter Property="FontWeight"  Value="Bold"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="3"
+                              Direction="315"
+                              Color="Black"
+                              RenderingBias="Quality"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type TextBlock}"  x:Key="txtinicio">
+        <Setter Property="FontSize" Value="28"></Setter>
+        <Setter Property="Foreground" Value="#FF270657"></Setter>
+        <Setter Property="FontWeight"  Value="Bold"/>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="35"
+                              Direction="300"
+                              Color="#FFA492F5"
+                              RenderingBias="Performance"
+                              Opacity="0.35"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
