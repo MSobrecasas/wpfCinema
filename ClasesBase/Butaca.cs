@@ -17,15 +17,17 @@ namespace ClasesBase {
             get { return but_Fila; }
             set { but_Fila = value; }
         }
-        private string but_Nro;
+        private int but_Nro;
 
-        public string But_Nro {
+        public int But_Nro
+        {
             get { return but_Nro; }
             set { but_Nro = value; }
         }
-        private string sala_ID;
+        private int sala_ID;
 
-        public string Sala_ID {
+        public int Sala_ID
+        {
             get { return sala_ID; }
             set { sala_ID = value; }
         }

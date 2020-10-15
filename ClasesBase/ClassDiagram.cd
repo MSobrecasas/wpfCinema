@@ -36,7 +36,7 @@
       <Compartment Name="Properties" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAQAAAAAAAAAAAgAIAAIAKAAAACAAAAEAAAABCAE=</HashCode>
+      <HashCode>gAAAAAAAAAAAAAAAAAQIAAAECAAAAAAAAAEAAIABCAA=</HashCode>
       <FileName>Pelicula.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -73,8 +73,22 @@
   <Class Name="ClasesBase.Sala">
     <Position X="7.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAgAQAAIAAAAAAAAAAAAA=</HashCode>
       <FileName>Sala.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClasesBase.Genero">
+    <Position X="6" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAQCAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Genero.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClasesBase.Clase">
+    <Position X="4" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAIAEAAA=</HashCode>
+      <FileName>Clase.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

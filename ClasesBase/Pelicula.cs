@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 
 namespace ClasesBase {
-    public class Pelicula {
-        private string peli_Codigo;
+    public class Pelicula
+    {
+        private int peli_ID;
 
-        public string Peli_Codigo {
-            get { return peli_Codigo; }
-            set { peli_Codigo = value; }
+        public int Peli_ID {
+            get { return peli_ID; }
+            set { peli_ID = value; }
         }
         private string peli_Titulo;
 
@@ -23,17 +24,19 @@ namespace ClasesBase {
             get { return peli_Duracion; }
             set { peli_Duracion = value; }
         }
-        private string peli_Genero;
+        private int gen_ID;
 
-        public string Peli_Genero {
-            get { return peli_Genero; }
-            set { peli_Genero = value; }
+        public int Gen_ID
+        {
+            get { return gen_ID; }
+            set { gen_ID = value; }
         }
-        private string peli_Clase;
+        private int cla_ID;
 
-        public string Peli_Clase {
-            get { return peli_Clase; }
-            set { peli_Clase = value; }
+        public int Cla_ID
+        {
+            get { return cla_ID; }
+            set { cla_ID = value; }
         }
     }
 }

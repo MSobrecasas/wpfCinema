@@ -3,6 +3,9 @@ c:\users\ma ry youkai\documents\visual studio 2010\Projects\LPOOII_GRUPO08\Clase
 c:\users\ma ry youkai\documents\visual studio 2010\Projects\LPOOII_GRUPO08\ClasesBase\obj\Debug\ClasesBase.dll
 c:\users\ma ry youkai\documents\visual studio 2010\Projects\LPOOII_GRUPO08\ClasesBase\obj\Debug\ClasesBase.pdb
 C:\Users\Ma Ry Youkai\documents\visual studio 2010\Projects\LPOOII_GRUPO08\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
+C:\LPOOII_GRUPO08\ClasesBase\bin\Debug\DataBase\Cinema.mdf
+C:\LPOOII_GRUPO08\ClasesBase\bin\Debug\DataBase\Cinema_log.ldf
+C:\LPOOII_GRUPO08\ClasesBase\bin\Debug\ClasesBase.dll.config
 C:\LPOOII_GRUPO08\ClasesBase\bin\Debug\ClasesBase.dll
 C:\LPOOII_GRUPO08\ClasesBase\bin\Debug\ClasesBase.pdb
 C:\LPOOII_GRUPO08\ClasesBase\obj\Debug\ClasesBase.dll

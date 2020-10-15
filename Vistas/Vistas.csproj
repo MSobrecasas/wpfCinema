@@ -77,11 +77,20 @@
     <Compile Include="Paginas\DataGridBasica.xaml.cs">
       <DependentUpon>DataGridBasica.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\ABMPeliculas.xaml.cs">
+      <DependentUpon>ABMPeliculas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\FiltroUsuario.xaml.cs">
+      <DependentUpon>FiltroUsuario.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Peliculas.xaml.cs">
       <DependentUpon>Peliculas.xaml</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Proyecciones.xaml.cs">
       <DependentUpon>Proyecciones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\ABMUsuarios.xaml.cs">
+      <DependentUpon>ABMUsuarios.xaml</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Usuarios.xaml.cs">
       <DependentUpon>Usuarios.xaml</DependentUpon>
@@ -137,11 +146,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Paginas\ABMPeliculas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\FiltroUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Paginas\Peliculas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Paginas\Proyecciones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\ABMUsuarios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

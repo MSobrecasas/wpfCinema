@@ -2,10 +2,16 @@
 
 FC:\LPOOII_GRUPO08\Vistas\Control de Usuario\BtnGC.xaml;;
 FC:\LPOOII_GRUPO08\Vistas\Control de Usuario\Login.xaml;;
+FC:\LPOOII_GRUPO08\Vistas\Control de Usuario\UCCombo.xaml;;
 FC:\LPOOII_GRUPO08\Vistas\Control de Usuario\UCDatos.xaml;;
 FC:\LPOOII_GRUPO08\Vistas\Paginas\ABMClientes.xaml;;
+FC:\LPOOII_GRUPO08\Vistas\Paginas\ABMProyecciones.xaml;;
 FC:\LPOOII_GRUPO08\Vistas\Paginas\DataGridBasica.xaml;;
+FC:\LPOOII_GRUPO08\Vistas\Paginas\ABMPeliculas.xaml;;
+FC:\LPOOII_GRUPO08\Vistas\Paginas\FiltroUsuario.xaml;;
 FC:\LPOOII_GRUPO08\Vistas\Paginas\Peliculas.xaml;;
+FC:\LPOOII_GRUPO08\Vistas\Paginas\Proyecciones.xaml;;
+FC:\LPOOII_GRUPO08\Vistas\Paginas\ABMUsuarios.xaml;;
 FC:\LPOOII_GRUPO08\Vistas\Paginas\Usuarios.xaml;;
 FC:\LPOOII_GRUPO08\Vistas\Resources\Dictionaries\BtnAddDeleteEdit.xaml;;
 FC:\LPOOII_GRUPO08\Vistas\Resources\Dictionaries\PlantillaButaca.xaml;;
@@ -14,7 +20,4 @@ FC:\LPOOII_GRUPO08\Vistas\Resources\Dictionaries\StyleButaca.xaml;;
 FC:\LPOOII_GRUPO08\Vistas\Resources\Dictionaries\StyleGenerales.xaml;;
 FC:\LPOOII_GRUPO08\Vistas\Resources\Dictionaries\StyleMenu.xaml;;
 FC:\LPOOII_GRUPO08\Vistas\WinWelcome.xaml;;
-FC:\LPOOII_GRUPO08\Vistas\Control de Usuario\UCCombo.xaml;;
-FC:\LPOOII_GRUPO08\Vistas\Paginas\ABMProyecciones.xaml;;
-FC:\LPOOII_GRUPO08\Vistas\Paginas\Proyecciones.xaml;;
 

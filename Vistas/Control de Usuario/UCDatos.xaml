@@ -17,7 +17,7 @@
         <TextBlock  HorizontalAlignment="Left" Style="{StaticResource txtabm}" Name="texto"
                 Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Text="{Binding TextC}"></TextBlock>
         <TextBox  Name="txt" VerticalAlignment="Center"  Style="{StaticResource ResourceKey=style_texbox}"
-                  Grid.Row="0" Grid.Column="1">
+                  Grid.Row="0" Grid.Column="1" x:FieldModifier="public" >
         </TextBox>
             
     </Grid>

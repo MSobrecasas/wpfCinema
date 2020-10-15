@@ -13,7 +13,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data;
 using ClasesBase;
-using ClasesBase.ListasAuxiliares;
 namespace Vistas.Paginas
 {
     /// <summary>
@@ -43,8 +42,7 @@ namespace Vistas.Paginas
         private void clientes()
         {
             Lista.ItemsSource = null;
-            ListaCliente CL = new ListaCliente();
-            Lista.ItemsSource = CL.cargar_lista();
+           
 
             GridViewColumn column = new GridViewColumn();
              column.Header = "Nombre";

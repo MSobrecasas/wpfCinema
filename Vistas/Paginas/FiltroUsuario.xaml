@@ -1,0 +1,106 @@
+﻿<Window x:Class="Vistas.Paginas.FiltroUsuario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vistas.Paginas"
+        
+        xmlns:coleccionUsuario="clr-namespace:ClasesBase.Enlaces;assembly=ClasesBase"
+        xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+        
+        mc:Ignorable="d"
+        Title="FiltroUsuario"  WindowStyle="None"
+        Height="530" Width="760"
+	    ResizeMode="NoResize"
+        
+        
+        >
+
+
+    <Window.Resources>
+        <ObjectDataProvider  ObjectType="{x:Type coleccionUsuario:ABMUsuario}"
+            MethodName="traer_usuario"
+            x:Key="list_Usuario">
+        </ObjectDataProvider>
+        <CollectionViewSource 
+            x:Key="vista_user"
+            Source="{StaticResource ResourceKey=list_Usuario}"
+            Filter="eventVistaUsuario_Filter">
+            <CollectionViewSource.SortDescriptions>
+                <componentModel:SortDescription PropertyName="Usu_NombreUsuario" Direction="Ascending"/>
+            </CollectionViewSource.SortDescriptions>
+        </CollectionViewSource>
+    </Window.Resources>
+    
+    
+    
+    <Grid Background="#b64d49" Width="760" Height="530">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="300*" />
+            <RowDefinition Height="130" />
+        </Grid.RowDefinitions>
+        <Image Source="/Vistas;component/Resources/Imagenes/vback.jpg" Grid.RowSpan="3" Stretch="Fill" Opacity="0.8"></Image>
+        <TextBlock HorizontalAlignment="Center" Style="{StaticResource txtabm}"
+                Grid.Row="0"  VerticalAlignment="Center" >Listado de Usuarios</TextBlock>
+        <Grid VerticalAlignment="Top" HorizontalAlignment="Right" Height="50" Background="Transparent"
+              Width="50">
+            <Button Height="45" Width="45" VerticalAlignment="Center" HorizontalAlignment="Center"
+                    Background="Transparent" Grid.Column="1" BorderThickness="0"
+                    Name="close" Click="close_Click">
+                <Image Source="/Vistas;component/Resources/Imagenes/close.png" Stretch="Fill"></Image>
+            </Button>
+        </Grid>
+        <Grid HorizontalAlignment="Center" Width="600" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Width="600">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="350"/>
+                    <ColumnDefinition Width="250"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock HorizontalAlignment="Center" Style="{StaticResource txtabm}"
+                Grid.Column="0"  VerticalAlignment="Center" >Buscar por Username</TextBlock>
+                <TextBox  Name="txtBuscar" VerticalAlignment="Center"  
+                          HorizontalAlignment="Center" Width="245" Height="40" 
+                          Style="{StaticResource ResourceKey=style_texbox}"
+                          Grid.Column="1" TextChanged="txtBuscar_TextChanged">
+                </TextBox>
+               
+                
+            </Grid>
+            <Grid Grid.Row="1">
+                <ListView Name="Lista_Usuario" ItemsSource="{Binding Source={StaticResource vista_user}}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="ID" Width="30" DisplayMemberBinding="{Binding Usu_ID}"/>
+                            <GridViewColumn Header="Nombre Usuario" Width="150" DisplayMemberBinding="{Binding Usu_NombreUsuario}"/>
+                            <GridViewColumn Header="Contraseña" Width="100" DisplayMemberBinding="{Binding Usu_Contraseña}"/>
+                            <GridViewColumn Header="Apellido y Nombre" Width="200" DisplayMemberBinding="{Binding Usu_ApellidoNombre}"/>
+                            <GridViewColumn Header="Rol" Width="100" DisplayMemberBinding="{Binding Rol_Codigo}"/>
+                        </GridView>
+                        
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="225"/>
+                <ColumnDefinition Width="225"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+         
+        </Grid>
+    </Grid>
+</Window>

@@ -69,7 +69,7 @@ namespace Vistas {
 
         private void btnUsuarios_Click(object sender, RoutedEventArgs e)
         {
-            FrameMain.Source = uGrilla;
+            FrameMain.Source = uUsuario;
         }
 
         private void close_Click(object sender, RoutedEventArgs e)

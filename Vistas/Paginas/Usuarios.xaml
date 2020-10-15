@@ -4,62 +4,234 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Vistas.Paginas"
-       xmlns:Control="clr-namespace:Vistas.Control_de_Usuario"
       mc:Ignorable="d" 
       d:DesignHeight="530" d:DesignWidth="760"
-      Title="Usuarios">
+      Title="Usuarios"
+      xmlns:svc="clr-namespace:ClasesBase.Enlaces;assembly=ClasesBase" Loaded="Page_Loaded">
 
+    <Page.Resources>
+        <ObjectDataProvider
+            ObjectType="{x:Type svc:ABMUsuario}"
+            MethodName="traer_usuario"
+            x:Key="list_Usuario">
+        </ObjectDataProvider>
+    </Page.Resources>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100" />
-            <RowDefinition Height="300*" />
-            <RowDefinition Height="130*" />
-        </Grid.RowDefinitions>
-        <TextBlock HorizontalAlignment="Center" Style="{StaticResource txtabm}"
-                Grid.Row="0"  VerticalAlignment="Center" >Usuarios</TextBlock>
-        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="180,0" Width="500" Grid.Row="1">
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="350" />
+                <RowDefinition Height="80" />
             </Grid.RowDefinitions>
-            <Control:UCDatos x:Name="txtusername" TextC="Nombre de Usuario"></Control:UCDatos>
-            <Grid Grid.Row="1">
+            <TextBlock Name="txtTitulo" Grid.Row="0">Proyecciones</TextBlock>
+            <Grid Grid.Row="1" Width="760">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="225"/>
-                    <ColumnDefinition Width="225"/>
+                    <ColumnDefinition Width="460"/>
+                    <ColumnDefinition Width="300"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock  HorizontalAlignment="Left" Style="{StaticResource txtabm}" Name="Contraseña"
-                Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"></TextBlock>
-                <PasswordBox  Name="txtPass" VerticalAlignment="Center"  Style="{StaticResource ResourceKey=style_passbox}"
-                  Grid.Row="0" Grid.Column="1">
-                </PasswordBox>
+               
+                <Button Grid.Column="1" Height="40" Width="250" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center" 
+                    Style="{StaticResource menu}" Click="Button_Click">Ver Listado</Button>
             </Grid>
-            <Control:UCDatos x:Name="txtAyP" Grid.Row="2" TextC="Apellido y Nombre"></Control:UCDatos>
+            <Grid Grid.Row="2" Name="Central">
+                <Canvas Name="canvas_usuario" DataContext="{Binding Source={StaticResource
+                    ResourceKey=list_Usuario}}">
+                    <Grid Width="760" Height="350">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Button Name="btn_first" Content="|&lt;" Grid.Column="0"
+                                      Width="50" Height="50" Click="btn_first_Click"
+                                        ></Button>
+                                <Button Name="btn_previous" Content="&lt;" Grid.Column="1"
+                                     Width="50" Height="50" Click="btn_previous_Click"></Button>
+                                <Button Name="btn_next" Content="&gt;" Grid.Column="2"
+                                     Width="50" Height="50" Click="btn_next_Click"></Button>
+                                <Button Name="btn_last" Content="&gt;|"  Grid.Column="3"
+                                     Width="50" Height="50" Click="btn_last_Click"></Button>
+                            </Grid>
+                           
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" HorizontalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="300"/>
+                                    <ColumnDefinition Width="225"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock  HorizontalAlignment="Left" Style="{StaticResource txtabm}" 
+                                            Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Text="ID"></TextBlock>
+                                <TextBlock  Name="tbxID" VerticalAlignment="Center"  Style="{StaticResource ResourceKey=txtabm}"
+                                            Grid.Row="0" Grid.Column="1" x:FieldModifier="public" Text="{Binding Usu_ID}"
+                                            />
+                                
+                            </Grid>
+                          
+                            <Grid Grid.Row="1" HorizontalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="300"/>
+                                    <ColumnDefinition Width="225"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock  HorizontalAlignment="Left" Style="{StaticResource txtabm}" 
+                                            Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Text="Nombre de Usuario"></TextBlock>
+                                <TextBlock  Name="tbxuser" VerticalAlignment="Center"  Style="{StaticResource ResourceKey=txtabm}"
+                                          Grid.Row="0" Grid.Column="1" x:FieldModifier="public" Text="{Binding Usu_NombreUsuario}"
+                                          >
+                                </TextBlock>
+                                <TextBox  Name="txtuser" VerticalAlignment="Center"  Style="{StaticResource ResourceKey=style_texbox}"
+                                          Grid.Row="0" Grid.Column="1" x:FieldModifier="public" 
+                                          Visibility="Hidden">
+                                </TextBox>
+                            </Grid>
+                            <Grid Grid.Row="2" HorizontalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="300"/>
+                                    <ColumnDefinition Width="225"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock  HorizontalAlignment="Left" Style="{StaticResource txtabm}" 
+                                            Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Text="Contraseña"></TextBlock>
+                                <TextBox  Name="txtpass" VerticalAlignment="Center"  Style="{StaticResource ResourceKey=style_texbox}"
+                                          Grid.Row="0" Grid.Column="1" x:FieldModifier="public" 
+                                         Visibility="Hidden">
+                                </TextBox>
+                                <TextBlock  Name="tbxpass" VerticalAlignment="Center"  Style="{StaticResource ResourceKey=txtabm}"
+                                          Grid.Row="0" Grid.Column="1" x:FieldModifier="public" Text="{Binding Usu_Contraseña}"
+                                          >
+                                </TextBlock>
+                            </Grid>
+                            <Grid Grid.Row="3" HorizontalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="300"/>
+                                    <ColumnDefinition Width="225"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock  HorizontalAlignment="Left" Style="{StaticResource txtabm}" 
+                                            Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Text="Nombre y Apellido"></TextBlock>
+                                <TextBlock  Name="tbxnya" VerticalAlignment="Center"  Style="{StaticResource ResourceKey=txtabm}"
+                                          Grid.Row="0" Grid.Column="1" x:FieldModifier="public" Text="{Binding Usu_ApellidoNombre}"
+                                          >
+                                </TextBlock>
+                                <TextBox  Name="txtnya" VerticalAlignment="Center"  Style="{StaticResource ResourceKey=style_texbox}"
+                                          Grid.Row="0" Grid.Column="1" x:FieldModifier="public" 
+                                          Visibility="Hidden">
+                                </TextBox>
+                            </Grid>
+                            <Grid Grid.Row="4" HorizontalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="300"/>
+                                    <ColumnDefinition Width="225"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock  HorizontalAlignment="Left" Style="{StaticResource txtabm}"
+                                            Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Text="Rol"></TextBlock>
+                                <Grid Grid.Column="1" Name="gridcmb" Visibility="Hidden">
+                                    <Border x:Name="border1"
+                                CornerRadius="20,20,20,20"
+                                BorderBrush="#682a22"
+                                BorderThickness="2"
+                                Background="White"
+                                Height="40">
 
-        </Grid>
-        <Grid Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="225"/>
-                <ColumnDefinition Width="225"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="60"/>
-            </Grid.RowDefinitions>
-            <Button   Name="btn_Guardar" VerticalAlignment="Center" HorizontalAlignment="Center"
-                      Grid.Row="0" Grid.Column="0" Style="{StaticResource menu}" Content="Guardar" Click="Guardar_Click"></Button>
-            <Button   Name="btn_Cancelar" VerticalAlignment="Center" HorizontalAlignment="Center"
-                      Grid.Row="0" Grid.Column="1" Style="{StaticResource menu}" Content="Cancelar" Click="Cancelar_Click"></Button>
+                                    </Border>
+                                    <ComboBox Background="Transparent" Width="205" Height="30" 
+                                              BorderThickness="0" Name="cmbRol" SelectedValue="{Binding Rol_Codigo}" >
+                                    </ComboBox>
+                                    
+                                </Grid>
+                                <TextBlock Background="Transparent"   Grid.Column="1" HorizontalAlignment="Left" Style="{StaticResource txtabm}"
+                                           Name="tbxrol" Text="{Binding Rol_Codigo}" >
+                                </TextBlock>
+                            </Grid>
+                           
+                        </Grid>
+                    </Grid>
+                </Canvas>
+                    
+                
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Grid.Column="0" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Style="{StaticResource menu}"
+                            Height="40" Width="150" Visibility="Hidden"
+                            Name="Guardar" Click="Guardar_Click">Guardar</Button>
+                    <Button Grid.Column="1" Style="{StaticResource menu}"
+                            Height="40" Width="150" Visibility="Hidden"
+                            Name="Cancelar" Click="Cancelar_Click">Cancelar</Button>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Button Style="{StaticResource add_button}" Grid.Column="0" 
+                        Grid.Row="0" Name="add" Click="add_Click"></Button>
+                    <Button Style="{StaticResource edit_button}" Grid.Column="1" 
+                        Grid.Row="0" Name="edit" Click="edit_Click"></Button>
+                    <Button Style="{StaticResource delete_button}" Grid.Column="2" 
+                        Grid.Row="0" Name="delete" Click="delete_Click"></Button>
+                </Grid>
 
+
+
+            </Grid>
         </Grid>
     </Grid>
 </Page>

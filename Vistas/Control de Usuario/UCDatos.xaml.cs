@@ -18,7 +18,9 @@ namespace Vistas.Control_de_Usuario
     /// Lógica de interacción para UCDatos.xaml
     /// </summary>
     public partial class UCDatos : UserControl
+
     {
+
         public UCDatos()
         {
             InitializeComponent();
@@ -29,6 +31,8 @@ namespace Vistas.Control_de_Usuario
         public String Dato
         {
             get { return txt.Text; }
+            set { 
+            }
         }
 
     }

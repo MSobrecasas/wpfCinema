@@ -25,25 +25,48 @@ C:\Users\Ma Ry Youkai\Documents\Visual Studio 2010\Projects\LPOOII_GRUPO08\Vista
 C:\Users\Ma Ry Youkai\Documents\Visual Studio 2010\Projects\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\VentaButacas.g.cs
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Vistas.csprojResolveAssemblyReference.cache
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\MainWindow.baml
-C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\Peliculas.baml
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\VentaButacas.baml
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\App.baml
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Control de Usuario\BtnGC.g.cs
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Control de Usuario\Login.g.cs
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Control de Usuario\UCCombo.g.cs
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Control de Usuario\UCDatos.g.cs
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\MainWindow.g.cs
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\ABMClientes.g.cs
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\ABMProyecciones.g.cs
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\DataGridBasica.g.cs
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\ABMPeliculas.g.cs
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\Peliculas.g.cs
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\Proyecciones.g.cs
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\ABMUsuarios.g.cs
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\VentaButacas.g.cs
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\WinWelcome.g.cs
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\App.g.cs
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Vistas_Content.g.cs
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Vistas_MarkupCompile.cache
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Vistas_MarkupCompile.lref
-C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\WinWelcome.g.cs
-C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\LPOOII_GRUPO08\Vistas\bin\Debug\DataBase\Cinema.mdf
+C:\LPOOII_GRUPO08\Vistas\bin\Debug\DataBase\Cinema_log.ldf
 C:\LPOOII_GRUPO08\Vistas\bin\Debug\Resources\Imagenes\Asiento.png
 C:\LPOOII_GRUPO08\Vistas\bin\Debug\Vistas.exe
 C:\LPOOII_GRUPO08\Vistas\bin\Debug\Vistas.pdb
 C:\LPOOII_GRUPO08\Vistas\bin\Debug\ClasesBase.dll
 C:\LPOOII_GRUPO08\Vistas\bin\Debug\ClasesBase.pdb
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\Usuarios.g.cs
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Control de Usuario\BtnGC.baml
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Control de Usuario\Login.baml
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Control de Usuario\UCCombo.baml
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Control de Usuario\UCDatos.baml
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\ABMClientes.baml
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\ABMProyecciones.baml
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\DataGridBasica.baml
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\ABMPeliculas.baml
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\Peliculas.baml
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\Proyecciones.baml
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\ABMUsuarios.baml
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\Usuarios.baml
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Resources\Dictionaries\BtnAddDeleteEdit.baml
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Resources\Dictionaries\PlantillaButaca.baml
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Resources\Dictionaries\PlantillaTexbox.baml
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Resources\Dictionaries\StyleButaca.baml
@@ -55,20 +78,5 @@ C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Vistas.exe
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Vistas.pdb
-C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Control de Usuario\UCDatos.g.cs
-C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Control de Usuario\UCDatos.baml
-C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\DataGridBasica.g.cs
-C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\DataGridBasica.baml
-C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Control de Usuario\BtnGC.g.cs
-C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Control de Usuario\BtnGC.baml
-C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\Usuarios.g.cs
-C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\Usuarios.baml
-C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Resources\Dictionaries\BtnAddDeleteEdit.baml
-C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\ABMClientes.g.cs
-C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\ABMClientes.baml
-C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Control de Usuario\UCCombo.g.cs
-C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\ABMProyecciones.g.cs
-C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\Proyecciones.g.cs
-C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Control de Usuario\UCCombo.baml
-C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\ABMProyecciones.baml
-C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\Proyecciones.baml
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\FiltroUsuario.g.cs
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\FiltroUsuario.baml

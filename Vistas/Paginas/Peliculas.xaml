@@ -3,52 +3,95 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:Control="clr-namespace:Vistas.Control_de_Usuario"
+      xmlns:local="clr-namespace:Vistas.Paginas"
+      xmlns:svc="clr-namespace:ClasesBase.Enlaces;assembly=ClasesBase"
       mc:Ignorable="d" 
       d:DesignHeight="530" d:DesignWidth="760"
-	Title="Peliculas">
+      Title="Peliculas">
 
+    <Page.Resources>
+        <ObjectDataProvider
+            ObjectType="{x:Type svc:ABMPelicula}"
+            MethodName="cargar_peliculas"
+            x:Key="list_Peliculas">
+        </ObjectDataProvider>
+    </Page.Resources>
+    
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100" />
-            <RowDefinition Height="300*" />
-            <RowDefinition Height="130*" />
-        </Grid.RowDefinitions>
-        <TextBlock HorizontalAlignment="Center" Style="{StaticResource txtabm}"
-                Grid.Row="0"  VerticalAlignment="Center" >Alta de Peliculas</TextBlock>
-        <Grid HorizontalAlignment="Center" Margin="180,0" Width="500" Grid.Row="1">
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="350" />
+                <RowDefinition Height="80" />
             </Grid.RowDefinitions>
-            <Control:UCDatos x:Name="txtTitulo" TextC="Titulo"></Control:UCDatos>
-            <Control:UCDatos x:Name="txtDuracion" Grid.Row="1" TextC="Duracion"></Control:UCDatos>
-            <Control:UCDatos x:Name="txtGenero" Grid.Row="2" TextC="Genero"></Control:UCDatos>
-            <Control:UCDatos x:Name="txtClase" Grid.Row="3" TextC="Clase"></Control:UCDatos>
-            
-        </Grid>
-        <Grid Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="225"/>
-                <ColumnDefinition Width="225"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="60"/>
-            </Grid.RowDefinitions>
-            <Button   Name="btn_Guardar" VerticalAlignment="Center" HorizontalAlignment="Center"
-                      Grid.Row="0" Grid.Column="0" Style="{StaticResource menu}" Content="Guardar" Click="Guardar_Click"></Button>
-            <Button   Name="btn_Cancelar" VerticalAlignment="Center" HorizontalAlignment="Center"
-                      Grid.Row="0" Grid.Column="1" Style="{StaticResource menu}" Content="Cancelar" Click="Cancelar_Click"></Button>
+            <TextBlock Name="txtTitulo" Grid.Row="0">Proyecciones</TextBlock>
+            <Grid Grid.Row="1" Width="760">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="560"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBox  Name="txtBuscar" VerticalAlignment="Center"  
+                      HorizontalAlignment="Center" Width="540" Height="40" Style="{StaticResource ResourceKey=style_texbox}"
+                      Grid.Column="0">
+                </TextBox>
+                <Button Grid.Column="1" Height="40" Width="190" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center" 
+                    Style="{StaticResource menu}">Buscar</Button>
+            </Grid>
+            <Grid Grid.Row="2" Name="Central">
+                <ListView x:Name="Lista" ItemsSource="{Binding Source={StaticResource list_Peliculas}}" SelectionChanged="Lista_SelectionChanged" >
+                    <ListView.View>
+                        <GridView x:Name="GV">
+                            <GridViewColumn Width="50" Header="ID"
+                                            DisplayMemberBinding="{Binding Path=peli_ID}"></GridViewColumn>
+                            <GridViewColumn Width="150" Header="Titulo"
+                                            DisplayMemberBinding="{Binding Path=peli_Titulo}"></GridViewColumn>
+                            <GridViewColumn Width="100" Header="Duracion"
+                                            DisplayMemberBinding="{Binding Path=peli_Duracion}"></GridViewColumn>
+                            <GridViewColumn Width="50" Header="Genero"
+                                            DisplayMemberBinding="{Binding Path=gen_ID}"></GridViewColumn>
+                            <GridViewColumn Width="50" Header="Clase"
+                                            DisplayMemberBinding="{Binding Path=cla_ID}"></GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+            <!--HACER ESTO EN CONTROL USUARIO-->
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Button Style="{StaticResource add_button}" Grid.Column="0" 
+                        Grid.Row="0" Name="add" Click="add_Click"></Button>
+                    <Button Style="{StaticResource edit_button}" Grid.Column="1" 
+                        Grid.Row="0" Name="edit" Click="edit_Click"></Button>
+                    <Button Style="{StaticResource delete_button}" Grid.Column="2" 
+                        Grid.Row="0" Name="delete" Click="delete_Click"></Button>
+                </Grid>
 
+
+
+            </Grid>
         </Grid>
     </Grid>
-
-</Page >
+</Page>
