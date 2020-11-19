@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Vistas.FlowDocs;
 
 using ClasesBase;
 
@@ -52,6 +53,12 @@ namespace Vistas.Paginas
         private void close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnImprimir_Click(object sender, RoutedEventArgs e)
+        {
+            FlowDocUsuario imp = new FlowDocUsuario();
+            imp.Show();
         }
     }
 }

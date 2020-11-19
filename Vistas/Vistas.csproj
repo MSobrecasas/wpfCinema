@@ -68,6 +68,9 @@
     <Compile Include="Control de Usuario\UCDatos.xaml.cs">
       <DependentUpon>UCDatos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FlowDocs\FlowDocUsuario.xaml.cs">
+      <DependentUpon>FlowDocUsuario.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\ABMClientes.xaml.cs">
       <DependentUpon>ABMClientes.xaml</DependentUpon>
     </Compile>
@@ -121,6 +124,10 @@
     <Page Include="Control de Usuario\UCDatos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FlowDocs\FlowDocUsuario.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -195,6 +202,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\Dictionaries\StyleMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Dictionaries\ValidacionUsuario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

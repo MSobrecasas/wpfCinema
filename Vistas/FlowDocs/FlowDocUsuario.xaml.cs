@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace Vistas.FlowDocs
+{
+    /// <summary>
+    /// Lógica de interacción para FlowDocUsuario.xaml
+    /// </summary>
+    public partial class FlowDocUsuario : Window
+    {
+        public FlowDocUsuario()
+        {
+            InitializeComponent();
+        }
+
+        private void btnImprimir_Click(object sender, RoutedEventArgs e)
+        {
+            PrintDialog print = new PrintDialog();
+            if (print.ShowDialog() == true)
+            {
+                print.PrintDocument(((IDocumentPaginatorSource)DocMain).DocumentPaginator, "Imprimir");
+            }
+        }
+
+        private void close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+    }
+}

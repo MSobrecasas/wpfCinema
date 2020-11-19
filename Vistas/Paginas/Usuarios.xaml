@@ -7,7 +7,8 @@
       mc:Ignorable="d" 
       d:DesignHeight="530" d:DesignWidth="760"
       Title="Usuarios"
-      xmlns:svc="clr-namespace:ClasesBase.Enlaces;assembly=ClasesBase" Loaded="Page_Loaded">
+      xmlns:svc="clr-namespace:ClasesBase.Enlaces;assembly=ClasesBase" 
+      Loaded="Page_Loaded">
 
     <Page.Resources>
         <ObjectDataProvider
@@ -15,9 +16,18 @@
             MethodName="traer_usuario"
             x:Key="list_Usuario">
         </ObjectDataProvider>
+        <ObjectDataProvider
+            x:Key="DATA_USER"
+             ObjectType="{x:Type svc:ABMUsuario}"
+             MethodName="validar_usuario">
+        </ObjectDataProvider>
     </Page.Resources>
     <Grid>
         <Grid>
+            <Grid.CommandBindings>
+                <CommandBinding Command="New" CanExecute="AddUser_CanExecute" 
+                                Executed="AddUser_Executed" />
+            </Grid.CommandBindings>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
@@ -43,7 +53,7 @@
             </Grid>
             <Grid Grid.Row="2" Name="Central">
                 <Canvas Name="canvas_usuario" DataContext="{Binding Source={StaticResource
-                    ResourceKey=list_Usuario}}">
+                    ResourceKey=list_Usuario}}" Width="760">
                     <Grid Width="760" Height="350">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
@@ -52,12 +62,12 @@
                             <RowDefinition Height="80" />
                             <RowDefinition />
                         </Grid.RowDefinitions>
-                        <Grid>
+                        <Grid Width="760">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition />
+                                <ColumnDefinition Width="460"/>
+                                <ColumnDefinition Width="300"/>
                             </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="1">
+                            <Grid Grid.Column="1" Name="Grid_panel">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition />
                                     <ColumnDefinition />
@@ -65,14 +75,17 @@
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
                                 <Button Name="btn_first" Content="|&lt;" Grid.Column="0"
-                                      Width="50" Height="50" Click="btn_first_Click"
-                                        ></Button>
+                                        Width="50" Height="50" Click="btn_first_Click"
+                                        Style="{StaticResource next_button}"></Button>
                                 <Button Name="btn_previous" Content="&lt;" Grid.Column="1"
-                                     Width="50" Height="50" Click="btn_previous_Click"></Button>
+                                        Width="50" Height="50" Click="btn_previous_Click"
+                                        Style="{StaticResource next_button}"></Button>
                                 <Button Name="btn_next" Content="&gt;" Grid.Column="2"
-                                     Width="50" Height="50" Click="btn_next_Click"></Button>
+                                        Width="50" Height="50" Click="btn_next_Click"
+                                        Style="{StaticResource next_button}"></Button>
                                 <Button Name="btn_last" Content="&gt;|"  Grid.Column="3"
-                                     Width="50" Height="50" Click="btn_last_Click"></Button>
+                                        Width="50" Height="50" Click="btn_last_Click"
+                                        Style="{StaticResource next_button}"></Button>
                             </Grid>
                            
                         </Grid>
@@ -87,7 +100,7 @@
                             <Grid Grid.Row="0" HorizontalAlignment="Center">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="300"/>
-                                    <ColumnDefinition Width="225"/>
+                                    <ColumnDefinition Width="300"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="50"/>
@@ -103,7 +116,7 @@
                             <Grid Grid.Row="1" HorizontalAlignment="Center">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="300"/>
-                                    <ColumnDefinition Width="225"/>
+                                    <ColumnDefinition Width="300"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="50"/>
@@ -111,18 +124,22 @@
                                 <TextBlock  HorizontalAlignment="Left" Style="{StaticResource txtabm}" 
                                             Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Text="Nombre de Usuario"></TextBlock>
                                 <TextBlock  Name="tbxuser" VerticalAlignment="Center"  Style="{StaticResource ResourceKey=txtabm}"
-                                          Grid.Row="0" Grid.Column="1" x:FieldModifier="public" Text="{Binding Usu_NombreUsuario}"
+                                            Grid.Row="0" Grid.Column="1" x:FieldModifier="public" 
+                                            Text="{Binding Usu_NombreUsuario}" 
                                           >
                                 </TextBlock>
                                 <TextBox  Name="txtuser" VerticalAlignment="Center"  Style="{StaticResource ResourceKey=style_texbox}"
                                           Grid.Row="0" Grid.Column="1" x:FieldModifier="public" 
-                                          Visibility="Hidden">
+                                          Visibility="Hidden" DataContext="{StaticResource DATA_USER}"
+                                          Text="{Binding Usu_NombreUsuario, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True,
+                                          ValidatesOnDataErrors=True, NotifyOnValidationError=true}" Validation.Error="Validation_Error">
+                                   
                                 </TextBox>
                             </Grid>
                             <Grid Grid.Row="2" HorizontalAlignment="Center">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="300"/>
-                                    <ColumnDefinition Width="225"/>
+                                    <ColumnDefinition Width="300"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="50"/>
@@ -131,7 +148,9 @@
                                             Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"  Text="Contraseña"></TextBlock>
                                 <TextBox  Name="txtpass" VerticalAlignment="Center"  Style="{StaticResource ResourceKey=style_texbox}"
                                           Grid.Row="0" Grid.Column="1" x:FieldModifier="public" 
-                                         Visibility="Hidden">
+                                         Visibility="Hidden" DataContext="{StaticResource DATA_USER}"
+                                          Text="{Binding Usu_Contraseña, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True,
+                                          ValidatesOnDataErrors=True, NotifyOnValidationError=true}" Validation.Error="Validation_Error">
                                 </TextBox>
                                 <TextBlock  Name="tbxpass" VerticalAlignment="Center"  Style="{StaticResource ResourceKey=txtabm}"
                                           Grid.Row="0" Grid.Column="1" x:FieldModifier="public" Text="{Binding Usu_Contraseña}"
@@ -141,7 +160,7 @@
                             <Grid Grid.Row="3" HorizontalAlignment="Center">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="300"/>
-                                    <ColumnDefinition Width="225"/>
+                                    <ColumnDefinition Width="300"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="50"/>
@@ -154,13 +173,15 @@
                                 </TextBlock>
                                 <TextBox  Name="txtnya" VerticalAlignment="Center"  Style="{StaticResource ResourceKey=style_texbox}"
                                           Grid.Row="0" Grid.Column="1" x:FieldModifier="public" 
-                                          Visibility="Hidden">
+                                          Visibility="Hidden" DataContext="{StaticResource DATA_USER}"
+                                          Text="{Binding Usu_ApellidoNombre, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True,
+                                          ValidatesOnDataErrors=True, NotifyOnValidationError=true}" Validation.Error="Validation_Error">
                                 </TextBox>
                             </Grid>
                             <Grid Grid.Row="4" HorizontalAlignment="Center">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="300"/>
-                                    <ColumnDefinition Width="225"/>
+                                    <ColumnDefinition Width="300"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="50"/>
@@ -176,7 +197,7 @@
                                 Height="40">
 
                                     </Border>
-                                    <ComboBox Background="Transparent" Width="205" Height="30" 
+                                    <ComboBox Background="Transparent" Width="255" Height="30" 
                                               BorderThickness="0" Name="cmbRol" SelectedValue="{Binding Rol_Codigo}" >
                                     </ComboBox>
                                     
@@ -193,27 +214,29 @@
                 
             </Grid>
             <Grid Grid.Row="3">
+                
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
+                    <ColumnDefinition Width="380"/>
+                    <ColumnDefinition Width="380"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition />
                 </Grid.RowDefinitions>
-                <Grid Grid.Column="0" VerticalAlignment="Center">
+                <Button Grid.Column="0" Style="{StaticResource menu}"
+                        Height="40" Width="150" Visibility="Hidden"
+                        Name="Guardar" Command="New"
+                        HorizontalAlignment="Right" VerticalAlignment="Center"
+                        Margin="0 0 50 0">Guardar</Button>
+                        <!--Click="Guardar_Click" -->
+                <Button Grid.Column="1" Style="{StaticResource menu}"
+                        Height="40" Width="150" Visibility="Hidden"
+                        Name="Cancelar" Click="Cancelar_Click"
+                        HorizontalAlignment="Left" VerticalAlignment="Center"
+                        Margin="50 0 0 0">Cancelar</Button>
+               
+                <Grid Grid.Column="1" Name="Grid_AED">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Style="{StaticResource menu}"
-                            Height="40" Width="150" Visibility="Hidden"
-                            Name="Guardar" Click="Guardar_Click">Guardar</Button>
-                    <Button Grid.Column="1" Style="{StaticResource menu}"
-                            Height="40" Width="150" Visibility="Hidden"
-                            Name="Cancelar" Click="Cancelar_Click">Cancelar</Button>
-                </Grid>
-                <Grid Grid.Column="1">
-                    <Grid.ColumnDefinitions>
                         <ColumnDefinition />
                         <ColumnDefinition />
                         <ColumnDefinition />
@@ -221,11 +244,11 @@
                     <Grid.RowDefinitions>
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <Button Style="{StaticResource add_button}" Grid.Column="0" 
+                    <Button Style="{StaticResource add_button}" Grid.Column="1" 
                         Grid.Row="0" Name="add" Click="add_Click"></Button>
-                    <Button Style="{StaticResource edit_button}" Grid.Column="1" 
+                    <Button Style="{StaticResource edit_button}" Grid.Column="2" 
                         Grid.Row="0" Name="edit" Click="edit_Click"></Button>
-                    <Button Style="{StaticResource delete_button}" Grid.Column="2" 
+                    <Button Style="{StaticResource delete_button}" Grid.Column="3" 
                         Grid.Row="0" Name="delete" Click="delete_Click"></Button>
                 </Grid>
 

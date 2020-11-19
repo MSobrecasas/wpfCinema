@@ -16,7 +16,7 @@
     <ControlTemplate x:Key="btn_menu" TargetType="{x:Type Button}">
 
         <Border x:Name="btn" BorderBrush="#682a22" BorderThickness="3" CornerRadius="25" Background="{StaticResource ColorBoton}">
-            <StackPanel >
+            <StackPanel>
                 <TextBlock Foreground="#8c574b"  HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock.Effect>
                         <DropShadowEffect ShadowDepth="2" Direction="315"

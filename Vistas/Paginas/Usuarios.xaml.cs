@@ -22,6 +22,7 @@ namespace Vistas.Paginas
     public partial class Usuarios : Page
     {
         bool nuevo = true;
+        string _usuario ="";
         public Usuarios()
         {
             InitializeComponent();
@@ -51,6 +52,7 @@ namespace Vistas.Paginas
             cmbRol.SelectedValue = tbxrol.Text;
             habilitar_tetxbox();
             habilitar_botones();
+            _usuario = txtuser.Text;
         }
 
         private void delete_Click(object sender, RoutedEventArgs e)
@@ -103,18 +105,32 @@ namespace Vistas.Paginas
         {
             deshabilitar_botones();
             deshabilitar_textbox();
+            limpiar_campos();
         }
-
-        private void Guardar_Click(object sender, RoutedEventArgs e)
+        
+        private void Guardar_Click()
         {
-            if (nuevo == true)
+            
+            if (ABMUsuario.usuario_existente(txtuser.Text) == 0 && nuevo == true)
             {
                 nuevo_usuario();
+                this.NavigationService.Refresh();
+                limpiar_campos();
             }else
             {
-                modificar_usuario();
+                if (nuevo == false &&
+                    (ABMUsuario.usuario_existente(txtuser.Text) == 0 || _usuario == txtuser.Text))
+                {
+                    modificar_usuario();
+                    this.NavigationService.Refresh();
+                    limpiar_campos();
+                }else
+                {
+                    MessageBox.Show("Nombre de usuario Existente");
+                }
+                
             }
-            this.NavigationService.Refresh();
+         
         }
         private void cargar_Combo()
         {
@@ -162,12 +178,16 @@ namespace Vistas.Paginas
         private void habilitar_botones()
         {
             Guardar.Visibility = Visibility.Visible;
-            Cancelar.Visibility = Visibility.Visible; 
+            Cancelar.Visibility = Visibility.Visible;
+            Grid_AED.Visibility = Visibility.Collapsed;
+            Grid_panel.Visibility = Visibility.Hidden;
         }
         private void deshabilitar_botones()
         {
             Guardar.Visibility = Visibility.Hidden;
             Cancelar.Visibility = Visibility.Hidden;
+            Grid_AED.Visibility = Visibility.Visible;
+            Grid_panel.Visibility = Visibility.Visible;
         }
 
         private void deshabilitar_textbox()
@@ -200,6 +220,35 @@ namespace Vistas.Paginas
         {
             FiltroUsuario oFiltro = new FiltroUsuario();
             oFiltro.ShowDialog();
+        }
+
+        private int _noOfErrorsOnScreen = 0;
+        private void Validation_Error(object sender, ValidationErrorEventArgs e)
+        {
+            if (e.Action == ValidationErrorEventAction.Added)
+                _noOfErrorsOnScreen++;
+            else
+                _noOfErrorsOnScreen--;
+        }
+
+        private void AddUser_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = _noOfErrorsOnScreen == 0;
+            e.Handled = true;
+        }
+
+        private void AddUser_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            Guardar_Click();
+            e.Handled = true;
+
+        }
+
+        private void limpiar_campos()
+        {
+            txtuser.Text = "";
+            txtpass.Text = "";
+            txtnya.Text = "";
         }
     }
 }

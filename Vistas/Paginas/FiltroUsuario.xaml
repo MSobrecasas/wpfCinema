@@ -93,14 +93,8 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="225"/>
-                <ColumnDefinition Width="225"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="60"/>
-            </Grid.RowDefinitions>
-         
+            <Button  Style="{StaticResource menu}" 
+                     Name="btnImprimir" Click="btnImprimir_Click">Imprimir</Button>
         </Grid>
     </Grid>
 </Window>

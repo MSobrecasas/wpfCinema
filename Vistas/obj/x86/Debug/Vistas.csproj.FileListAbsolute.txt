@@ -80,3 +80,6 @@ C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Vistas.exe
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Vistas.pdb
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\FiltroUsuario.g.cs
 C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Paginas\FiltroUsuario.baml
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\Resources\Dictionaries\ValidacionUsuario.baml
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\FlowDocs\FlowDocUsuario.g.cs
+C:\LPOOII_GRUPO08\Vistas\obj\x86\Debug\FlowDocs\FlowDocUsuario.baml

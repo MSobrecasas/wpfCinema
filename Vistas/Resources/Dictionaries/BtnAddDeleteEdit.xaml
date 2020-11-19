@@ -83,4 +83,34 @@
 
     </Style>
 
+    <ControlTemplate x:Key="btn_next" TargetType="{x:Type Button}">
+
+        <Border  BorderBrush="#682a22" BorderThickness="3" CornerRadius="25" Background="{StaticResource ColorBoton}"   >
+            <TextBlock Foreground="#682a22"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"
+                       >
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="2" Direction="315"
+                                          Color="#FFEFD7FF" Opacity="2" BlurRadius="5" />
+                </TextBlock.Effect>
+                    
+                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Top"></ContentPresenter>
+
+
+            </TextBlock>
+        </Border>
+
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type Button}" x:Key="next_button">
+        <Setter Property="Template" Value="{StaticResource ResourceKey=btn_next}"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True" >
+                <Setter Property="Height" Value="55" ></Setter>
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
 </ResourceDictionary>

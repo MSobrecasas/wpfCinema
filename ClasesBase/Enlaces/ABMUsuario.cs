@@ -36,7 +36,7 @@ namespace ClasesBase.Enlaces
             SqlConnection c = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
 
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT * FROM Usuario";
+            cmd.CommandText = "SELECT * FROM vista_usuario";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = c;
 
@@ -102,6 +102,62 @@ namespace ClasesBase.Enlaces
             conexion.Open();
             cmd.ExecuteNonQuery();
             conexion.Close();
+        }
+
+        ////////////////////// VALIDACIONES/////////////////////////////
+        public Usuario validar_usuario()
+        {
+            Usuario oUser = new Usuario();
+            oUser.Usu_NombreUsuario = "";
+            oUser.Usu_Contraseña = "";
+            oUser.Usu_ApellidoNombre = "";
+            oUser.Rol_Codigo = 0;
+            return oUser;
+        }
+
+        public static DataTable obtener_rol(string user, string pass)
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "obtener_rol";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@user", user);
+            cmd.Parameters.AddWithValue("@pass", pass);
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            da.Fill(dt);
+
+            return dt;
+        }
+
+        public static int usuario_existente(string user)
+        {
+            int cantidad = 0;
+
+            SqlConnection conexion = new SqlConnection(ClasesBase.Properties.Settings.Default.conexion);
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "usuario_existente";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = conexion;
+
+            cmd.Parameters.AddWithValue("@user", user);
+
+            cmd.Parameters.AddWithValue("@count_user", SqlDbType.Int);
+            cmd.Parameters["@count_user"].Direction = ParameterDirection.Output;
+
+            conexion.Open();
+            cmd.ExecuteNonQuery();
+            conexion.Close();
+
+            cantidad = (int)cmd.Parameters["@count_user"].Value;
+
+            return cantidad;
         }
     }
 }

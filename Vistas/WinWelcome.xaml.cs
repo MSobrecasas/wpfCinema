@@ -11,6 +11,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ClasesBase;
+using ClasesBase.Enlaces;
+using System.Data;
+
+
 namespace Vistas {
     /// <summary>
     /// Interaction logic for WinWelcome.xaml
@@ -21,13 +25,13 @@ namespace Vistas {
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e) {
-            Usuario oUser = new Usuario();
             string user = login.Usuario;
             string pass = login.Contrseña;
             int usert = 0;
-             if ( (user == "Admin" && pass == "admin")
-                 || (user == "Vendedor" && pass == "vend")) {
-                 if  (user == "Admin" ) {
+            int rol = 0;
+            rol = validar(user, pass);
+             if ( rol != 0) {
+                 if  (rol == 1 ) {
                  usert = 1;
                  }
                      MainWindow oMain = new MainWindow(usert);
@@ -43,6 +47,39 @@ namespace Vistas {
         private void btn_close(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        public int validar(string user, string pass)
+        {
+
+            DataTable dt = ABMUsuario.obtener_rol(user,pass);
+
+            if (dt.Rows.Count == 1)
+            {
+
+                if (dt.Rows[0][0].ToString() == "1")
+                {
+                    return 1;
+                }
+                else
+                {
+                    if (dt.Rows[0][0].ToString() == "2")
+                    {
+                        return 2;
+                    }
+                    else
+                    {
+                        return 3;
+                    }
+
+                }
+            }
+            else
+            {
+                return 0;
+            }
+
+
         }
     }
 }

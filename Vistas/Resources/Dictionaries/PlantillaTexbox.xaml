@@ -2,9 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:Vistas.Resources.Dictionaries">
 
-    
+
     <ControlTemplate  x:Key="plan_texbox" TargetType="{x:Type TextBox}">
-     
         <Border x:Name="border"
                 CornerRadius="20,20,20,20"
                 BorderBrush="#682a22"
@@ -14,15 +13,42 @@
             <ScrollViewer x:Name="PART_ContentHost"
                           Focusable="false"
                           HorizontalScrollBarVisibility="Hidden"
-                          VerticalScrollBarVisibility="Hidden"/>
+                          VerticalScrollBarVisibility="Hidden" Margin="15 0 15 0"
+                          VerticalAlignment="Center"/>
         </Border>
     </ControlTemplate>
     
+    <ControlTemplate x:Key="TexBoxErrorTemplate">
+
+        <DockPanel LastChildFill="True">
+
+            <Border BorderBrush="Red" BorderThickness="2" CornerRadius="20,20,20,20"
+                    >
+
+                <AdornedElementPlaceholder />
+
+            </Border>
+
+        </DockPanel>
+    </ControlTemplate>
+
     <Style TargetType="{x:Type TextBox}"  x:Key="style_texbox">
         <Setter Property="Template" Value="{StaticResource ResourceKey=plan_texbox}"> </Setter>
         <Setter Property="Height" Value="40"></Setter>
         <Setter Property="FontSize" Value="20"></Setter>
         <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        <Setter Property="Validation.ErrorTemplate"
+                Value="{StaticResource TexBoxErrorTemplate}"/>
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="True">
+                <Setter Property="ToolTip">
+                    <Setter.Value>
+                        <Binding Path="(Validation.Errors)[0].ErrorContent"
+                                 RelativeSource="{x:Static RelativeSource.Self}"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
 
     </Style>
 
